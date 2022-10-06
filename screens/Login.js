@@ -90,9 +90,9 @@ const SignInUser = () => {
             <TouchableOpacity
                 onPress={() => {SignInUser(email, password), navigation.navigate('Home')}}
                 style={styles.button}>
-                <Text style={{fontWeight: 'bold', fontSize: 22, backgroundColor: '#004ed0'}}>Sign in</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 22}}>Sign in</Text>
             </TouchableOpacity>
-            <GoogleButton type="dark" onClick={googleSignUp} style={styles.googleButton} />
+            <GoogleButton type="light" onClick={googleSignUp} style={styles.googleButton} />
             <TouchableOpacity
                 onPress={() => navigation.navigate('Signup')}
                 style={{marginTop: 20}}>
@@ -125,9 +125,9 @@ const styles = StyleSheet.create({
     },
     button: {
         marginTop: 50,
-        height: 70,
-        width: 250,
-        backgroundColor: '#026efd',
+        height: 40,
+        width: 200,
+        backgroundColor: '#fc8eac',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
@@ -135,5 +135,6 @@ const styles = StyleSheet.create({
     },
     googleButton: {
         marginTop: 30,
+        color: '#000000'
     },
 })

@@ -3,10 +3,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Home from './pages/Home';
-import Header from './components/Header';
+import OnBoardScreen from './screens/Onboard';
+import Login from './screens/Login';
+import Signup from './screens/Signup';
+import Home from './screens/Home';
+import Food from './screens/Food';
+import Drinks from './screens/Drinks';
 
 const Stack = createStackNavigator();
 
@@ -16,46 +18,19 @@ const App = () => {
 
   if (!user) {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="OnboardScreen" 
+        component={OnBoardScreen}/>
         <Stack.Screen name="Login"
-        component={Login}
-        options={{
-          headerTitle: () => <Header name="Bug Ninza" />,
-          headerStyle: {
-            height:150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: '#00e4d0',
-            shadowColor: '#000',
-            elevation: 25
-          }
-        }} />
+        component={Login} />
         <Stack.Screen name="Signup"
-        component={Signup}
-        options={{
-          headerTitle: () => <Header name="Bug Ninza" />,
-          headerStyle: {
-            height:150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: '#00e4d0',
-            shadowColor: '#000',
-            elevation: 25
-          }
-        }} />
+        component={Signup} />
         <Stack.Screen name="Home"
-        component={Home}
-        options={{
-          headerTitle: () => <Header name="Home" />,
-          headerStyle: {
-            height:150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: '#00e4d0',
-            shadowColor: '#000',
-            elevation: 25
-          }
-        }} />
+        component={Home} />
+        <Stack.Screen name="Food"
+        component={Food} />
+        <Stack.Screen name="Drinks"
+        component={Drinks} />
           </Stack.Navigator>
     );
   }

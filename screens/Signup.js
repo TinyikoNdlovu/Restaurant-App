@@ -59,7 +59,7 @@ const RegisterUser = async (firstName, lastName, email, password) => {
                 <TouchableOpacity
                 onPress={() => {RegisterUser(firstName, lastName, email, password), navigation.navigate('Login')}}
                 style={styles.button} >
-                    <Text style={{fontWeight: 'bold', fontSize: 22, backgroundColor: '#004ed0'}}>Signup</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 22}}>Signup</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                 onPress={() => navigation.navigate('Login')}
@@ -93,9 +93,9 @@ const styles = StyleSheet.create({
     },
     button: {
         marginTop: 50,
-        height: 70,
-        width: 250,
-        backgroundColor: '#026efd',
+        height: 40,
+        width: 200,
+        backgroundColor: '#fc8eac',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
