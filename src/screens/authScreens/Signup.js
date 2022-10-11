@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 
-import { authentication } from "../components/firebase-Config";
+import { authentication } from "../../components/firebase-Config";
 
 const Signup = () => {
     const navigation = useNavigation()
@@ -30,7 +30,7 @@ const RegisterUser = async (firstName, lastName, email, password) => {
         <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
         <View style={styles.container}>
             
-            <Text style={{fontWeight: 'bold', fontSize: 23}}>
+            <Text style={{fontWeight: 'bold', fontSize: 23,color: '#f29bb3'}}>
                 Signup Here!!</Text>
                 <View style={{marginTop: 40}}>
                     <TextInput style={styles.TextInput}
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 10,
         width: 400,
-        fontSize: 20,
+        fontSize: 16,
         borderBottomWidth: 1,
         borderBottomColor: '#000',
         marginBottom: 10,

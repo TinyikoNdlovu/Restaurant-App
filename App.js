@@ -4,8 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 
 import OnBoardScreen from './src/screens/OnBoard';
-import Login from './src/screens/Login';
-import Signup from './src/screens/Signup';
+import Login from './src/screens/authScreens/Login';
+import Signup from './src/screens/authScreens/Signup';
 import Home from './src/screens/Home';
 import Food from './src/screens/Food';
 import Drinks from './src/screens/Drinks';

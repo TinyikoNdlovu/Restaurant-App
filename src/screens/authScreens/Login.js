@@ -2,10 +2,12 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView } fro
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {colors} from '../../global/Styles';
+
 
 import GoogleButton from 'react-google-button'
 import { signInWithPopup } from "firebase/auth";
-import { authentication, provider } from "../components/firebase-Config";
+import { authentication, provider } from "../../components/firebase-Config";
 
 const Login = () => {
     const navigation = useNavigation()
@@ -72,8 +74,11 @@ const SignInUser = () => {
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
         <View style={styles.container}>
-            <Text style={{fontWeight: 'bold', fontSize: 26, marginBottom: 10}}>Login</Text>
-            <Text style={{fontWeight: 'bold', fontSize: 13, color: 'grey'}}>Please enter the email and password registered with your account!!</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 26, color: '#f29bb3', marginBottom: 10}}>Login</Text>
+            <View style={{alignItems: 'center'}}>
+            <Text style={{fontWeight: 'bold', fontSize: 13, color: colors.grey3}}>Please enter the email and password</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 13, color: colors.grey3}}>registered with your account!!</Text>
+            </View>
             <View style={{marginTop: 40}}>
                 <TextInput style={styles.TextInput}
                 placeholder= "Email"
@@ -94,6 +99,14 @@ const SignInUser = () => {
                 style={styles.button}>
                 <Text style={{fontWeight: 'bold', fontSize: 22}}>Sign in</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('ForgotPassword')}
+                style={{marginTop: 20}}>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: colors.grey3, marginBottom: 10}}>
+                    Forgot Password ?
+                </Text>
+            </TouchableOpacity>
+            <Text style={{fontWeight: 'bold', fontSize: 16}}>OR</Text>
             <GoogleButton type="light" onClick={googleSignUp} style={styles.googleButton} />
             <TouchableOpacity
                 onPress={() => navigation.navigate('Signup')}
@@ -120,7 +133,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 10,
         width: 400,
-        fontSize: 20,
+        fontSize: 16,
         borderBottomWidth: 1,
         borderBottomColor: '#000',
         marginBottom: 10,
@@ -137,7 +150,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
     },
     googleButton: {
-        marginTop: 30,
+        marginTop: 20,
         color: '#e36888',
     },
 })
