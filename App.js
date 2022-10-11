@@ -1,46 +1,62 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 
-import OnBoardScreen from './screens/Onboard';
-import Login from './screens/Login';
-import Signup from './screens/Signup';
-import Home from './screens/Home';
-import Food from './screens/Food';
-import Drinks from './screens/Drinks';
+import OnBoardScreen from './src/screens/OnBoard';
+import Login from './src/screens/Login';
+import Signup from './src/screens/Signup';
+import Home from './src/screens/Home';
+import Food from './src/screens/Food';
+import Drinks from './src/screens/Drinks';
+import Header from './src/components/Header';
+import {colors} from './src/global/Styles'
 
 const Stack = createStackNavigator();
 
-const App = () => {
+export default function App() {
 
-  const [user, setUser] = useState();
-
-  if (!user) {
-    return (
-      <Stack.Navigator headerMode="none">
-        <Stack.Screen name="OnboardScreen" 
-        component={OnBoardScreen}/>
-        <Stack.Screen name="Login"
-        component={Login} />
-        <Stack.Screen name="Signup"
-        component={Signup} />
-        <Stack.Screen name="Home"
-        component={Home} />
-        <Stack.Screen name="Food"
-        component={Food} />
-        <Stack.Screen name="Drinks"
-        component={Drinks} />
-          </Stack.Navigator>
-    );
-  }
-
-}
-export default () => {
-  return (
+  return(
     <NavigationContainer>
-      <App />
+      <Stack.Navigator initialRouteName='OnboardScreen'>
+         <Stack.Screen name="OnboardScreen" 
+        component={OnBoardScreen}
+        options={{title:'Welcome To Royale Food Restaurants',
+        headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+        headerStyle: {backgroundColor: colors.buttons, height: 50} }}/>
+        <Stack.Screen name="Login"
+        component={Login}
+        options={{title:'My Account',
+        headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+        headerStyle: {backgroundColor: colors.buttons, height: 50}}}/>
+        <Stack.Screen name="Signup"
+        component={Signup}
+        options={{title:'Signup',
+        headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+        headerStyle: {backgroundColor: colors.buttons, height: 50}}} />
+        <Stack.Screen name="Home"
+        component={Home}
+        options={{title:'Home',
+        headerTitleStyle: {color: '#111', fontWeight: 'bold',},
+        headerStyle: {backgroundColor: colors.buttons, height: 50}}}/>
+        <Stack.Screen name="Food"
+        component={Food}
+        options={{headerShown: false}} />
+        <Stack.Screen name="Drinks"
+        component={Drinks}
+        options={{headerShown: false}} />
+          </Stack.Navigator>
+          <StatusBar barStyle="light-content"
+          backgroundColor = {colors.statusbar} />
     </NavigationContainer>
+    
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+})
+
 

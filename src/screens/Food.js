@@ -1,13 +1,11 @@
-import 'react-native-gesture-handler';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, Button, } from "react-native";
 import  React, {useState, useEffect } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { authentication } from "../components/firebase-Config";
-import { Icon } from "react-native-vector-icons/MaterialIcons";
 
 // import firestore from '@react-native-firebase/firestore';
 
-const Home = ({signOut}) => {
+const Food = () => {
 
     const navigation = useNavigation()
     const [name, setName] = useState('')
@@ -15,26 +13,15 @@ const Home = ({signOut}) => {
    return (
     <View>
       <SafeAreaView style={{alignItems: 'left', justifyContent: 'left', marginTop: 50, marginLeft: 60}}>
-        <View>
-          <Text>Hello,</Text>
-          <Text>Tinyiko</Text>
-          <Image />
-        </View>
         <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-          Categories
+          Choose healthy food here
         </Text>
 
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
-        <TouchableOpacity
-                onPress={() => navigation.navigate('Food')}
-                style={styles.button}>
-                  
-                <Text style={{fontWeight: 'bold', fontSize: 22}}>Food</Text>
-            </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Drinks')}
                 style={styles.button}>
-                  
+                  <Image style={{width: '50%', resizeMode: 'contain'}} source={require("../../assets/food.jpg")} />
                 <Text style={{fontWeight: 'bold', fontSize: 22}}>Drinks</Text>
             </TouchableOpacity>
         </View>
@@ -44,7 +31,7 @@ const Home = ({signOut}) => {
   );
 }
 
-export default Home
+export default Food
 
 const styles = StyleSheet.create({
   button: {

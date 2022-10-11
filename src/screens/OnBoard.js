@@ -9,7 +9,7 @@ const OnBoardScreen = () => {
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
             <View style={{height: 400}}>
-                <Image style={{width: '100%', resizeMode: 'contain', top: -150}} source={require("../assets/onboardImage.png")} />
+                <Image style={{width: '100%', resizeMode: 'contain', top: -200}} source={require("../../assets/onboardImage.png")} />
             </View>
             <View style={styles.textContainer}>
             <View>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create ({
         height: 12,
         width: 30,
         borderRadius: 10,
-        backgroundColor: '#fc8eac',
+        backgroundColor: '#e36888',
         marginHorizontal: 5,
     },
     indicator: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create ({
         marginTop: 50,
         height: 40,
         width: 200,
-        backgroundColor: '#fc8eac',
+        backgroundColor: '#e36888',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',

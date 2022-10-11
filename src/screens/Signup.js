@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
@@ -27,7 +27,9 @@ const RegisterUser = async (firstName, lastName, email, password) => {
     }
 
     return (
+        <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
         <View style={styles.container}>
+            
             <Text style={{fontWeight: 'bold', fontSize: 23}}>
                 Signup Here!!</Text>
                 <View style={{marginTop: 40}}>
@@ -69,6 +71,8 @@ const RegisterUser = async (firstName, lastName, email, password) => {
                 </Text>
             </TouchableOpacity>
         </View>
+        </SafeAreaView>
+        
     )
 }
 
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
         height: 40,
         width: 200,
-        backgroundColor: '#fc8eac',
+        backgroundColor: '#e36888',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',

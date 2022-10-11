@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
@@ -70,8 +70,10 @@ const SignInUser = () => {
   }
 
     return (
+        <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
         <View style={styles.container}>
-            <Text style={{fontWeight: 'bold', fontSize: 26}}>Login</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 26, marginBottom: 10}}>Login</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 13, color: 'grey'}}>Please enter the email and password registered with your account!!</Text>
             <View style={{marginTop: 40}}>
                 <TextInput style={styles.TextInput}
                 placeholder= "Email"
@@ -101,6 +103,7 @@ const SignInUser = () => {
                 </Text>
             </TouchableOpacity>
         </View>
+        </SafeAreaView>
     )
 }
 
@@ -127,7 +130,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
         height: 40,
         width: 200,
-        backgroundColor: '#fc8eac',
+        backgroundColor: '#e36888',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
@@ -135,6 +138,6 @@ const styles = StyleSheet.create({
     },
     googleButton: {
         marginTop: 30,
-        color: '#000000'
+        color: '#e36888',
     },
 })
