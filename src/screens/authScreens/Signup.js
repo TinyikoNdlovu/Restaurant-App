@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 
 import { authentication } from "../../components/firebase-Config";
+import {colors} from '../../global/Styles';
 
 const Signup = () => {
     const navigation = useNavigation()
@@ -66,7 +67,7 @@ const RegisterUser = async (firstName, lastName, email, password) => {
                 <TouchableOpacity
                 onPress={() => navigation.navigate('Login')}
                 style={{marginTop: 20}}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color:colors.grey3}}>
                     Already have an account? Login Now
                 </Text>
             </TouchableOpacity>
@@ -86,17 +87,19 @@ const styles = StyleSheet.create({
         marginTop: 100,
     },
     TextInput: {
-        paddingTop: 20,
-        paddingBottom: 10,
-        width: 400,
-        fontSize: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: '#000',
+        width: 300,
+        height: 35,
+        fontSize: 12,
+        borderWidth: 1,
+        borderColor: '#000',
+        marginHorizontal: 20,
+        borderRadius: 12,
         marginBottom: 10,
+        paddingLeft: 15,
         textAlign: 'center',
     },
     button: {
-        marginTop: 50,
+        marginTop: 25,
         height: 40,
         width: 200,
         backgroundColor: '#e36888',

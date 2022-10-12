@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, View, SafeAreaView, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import {colors} from '../global/Styles';
 
 const OnBoardScreen = () => {
 
@@ -8,11 +9,15 @@ const OnBoardScreen = () => {
 
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+            <View>
+            <Text style={styles.discover}>Welcome, Discover restaurant's in your area@</Text>
+            </View>
             <View style={{height: 400}}>
                 <Image style={{width: '100%', resizeMode: 'contain', top: -200}} source={require("../../assets/onboardImage.png")} />
             </View>
             <View style={styles.textContainer}>
             <View>
+                
                 <Text style={styles.txtWords}>Healthy and Delicious Food</Text>
                 <Text style={styles.slogan}>We help you find best Healty and delicious food</Text>
             </View>
@@ -43,16 +48,22 @@ const styles = StyleSheet.create ({
         justifyContent: 'space-between',
         paddingBottom: 40,
     },
+    discover: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: colors.grey3,
+    },
     txtWords: {
-        fontSize: 32,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
     },
     slogan: {
-        marginTop: 20,
-        fontSize: 18, 
+        marginTop: 16,
+        fontSize: 16, 
         textAlign: 'center',
-        color: 'grey',
+        color: colors.grey3,
     },
     indicatorContainer: {
         height: 50,

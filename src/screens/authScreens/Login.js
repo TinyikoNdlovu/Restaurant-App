@@ -8,6 +8,7 @@ import {colors} from '../../global/Styles';
 import GoogleButton from 'react-google-button'
 import { signInWithPopup } from "firebase/auth";
 import { authentication, provider } from "../../components/firebase-Config";
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Login = () => {
     const navigation = useNavigation()
@@ -102,16 +103,17 @@ const SignInUser = () => {
             <TouchableOpacity
                 onPress={() => navigation.navigate('ForgotPassword')}
                 style={{marginTop: 20}}>
-                <Text style={{fontWeight: 'bold', fontSize: 16, color: colors.grey3, marginBottom: 10}}>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: colors.grey3,textDecorationLine: 'underline', marginBottom: 10}}>
                     Forgot Password ?
                 </Text>
             </TouchableOpacity>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>OR</Text>
             <GoogleButton type="light" onClick={googleSignUp} style={styles.googleButton} />
+            <FacebookIcon color="primary" title="Sign in with Facebook" button />
             <TouchableOpacity
                 onPress={() => navigation.navigate('Signup')}
                 style={{marginTop: 20}}>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>
+                <Text style={{fontWeight: 'bold', fontSize: 16, color: colors.grey3}}>
                     Don't have an account? Signup Now
                 </Text>
             </TouchableOpacity>
@@ -130,17 +132,19 @@ const styles = StyleSheet.create({
         marginTop: 100,
     },
     TextInput: {
-        paddingTop: 20,
-        paddingBottom: 10,
-        width: 400,
-        fontSize: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: '#000',
+        width: 300,
+        height: 35,
+        fontSize: 12,
+        borderWidth: 1,
+        borderColor: '#000',
+        marginHorizontal: 20,
+        borderRadius: 12,
         marginBottom: 10,
+        paddingLeft: 15,
         textAlign: 'center',
     },
     button: {
-        marginTop: 50,
+        marginTop: 25,
         height: 40,
         width: 200,
         backgroundColor: '#e36888',
