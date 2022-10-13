@@ -109,7 +109,10 @@ const SignInUser = () => {
             </TouchableOpacity>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>OR</Text>
             <GoogleButton type="light" onClick={googleSignUp} style={styles.googleButton} />
-            <FacebookIcon color="primary" title="Sign in with Facebook" button />
+            <TouchableOpacity style={styles.facebookButton} >
+            <FacebookIcon color="#fff" />
+            <Text style={{fontWeight: 'bold', fontSize: 16, marginLeft: 10}}>Sign in with Facebook</Text>
+            </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Signup')}
                 style={{marginTop: 20}}>
@@ -156,5 +159,16 @@ const styles = StyleSheet.create({
     googleButton: {
         marginTop: 20,
         color: '#e36888',
+    },
+    facebookButton: {
+        flexDirection: 'row',
+        marginTop: 25,
+        height: 40,
+        width: 250,
+        backgroundColor: '#e36888',
+        color: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 50,
     },
 })

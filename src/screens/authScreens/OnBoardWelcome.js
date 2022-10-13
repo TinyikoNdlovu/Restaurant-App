@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, StyleSheet, View, SafeAreaView, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {colors} from '../global/Styles';
+import {colors} from '../../global/Styles';
 
-const OnBoardScreen = () => {
+const OnBoardWelcome = () => {
 
     const navigation = useNavigation()
 
@@ -13,7 +13,7 @@ const OnBoardScreen = () => {
             <Text style={styles.discover}>Welcome, Discover restaurant's in your area@</Text>
             </View>
             <View style={{height: 400}}>
-                <Image style={{width: '100%', resizeMode: 'contain', top: -200}} source={require("../../assets/onboardImage.png")} />
+                <Image style={{width: '100%', resizeMode: 'contain', top: -200}} source={require("../../../assets/onboardImage.png")} />
             </View>
             <View style={styles.textContainer}>
             <View>
@@ -39,7 +39,7 @@ const OnBoardScreen = () => {
     )
 }
 
-export default OnBoardScreen
+export default OnBoardWelcome
 
 const styles = StyleSheet.create ({
     textContainer: {

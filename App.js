@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 
-import OnBoardScreen from './src/screens/OnBoard';
+import OnBoardWelcome from './src/screens/authScreens/OnBoardWelcome';
 import Login from './src/screens/authScreens/Login';
 import Signup from './src/screens/authScreens/Signup';
 import Home from './src/screens/Home';
@@ -18,9 +18,9 @@ export default function App() {
 
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='OnboardScreen'>
-         <Stack.Screen name="OnboardScreen" 
-        component={OnBoardScreen}
+      <Stack.Navigator initialRouteName='OnboardWelcome'>
+         <Stack.Screen name="OnboardWelcome" 
+        component={OnBoardWelcome}
         options={{title:'Welcome To Royale Food Restaurants',
         headerTitleStyle: {color: '#111', fontWeight: 'bold',},
         headerStyle: {backgroundColor: colors.buttons, height: 50} }}/>
