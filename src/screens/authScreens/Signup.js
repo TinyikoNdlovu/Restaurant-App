@@ -7,6 +7,7 @@ import { authentication } from "../../components/firebase-Config";
 import {colors} from '../../global/Styles';
 
 const Signup = () => {
+    
     const navigation = useNavigation()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -62,7 +63,7 @@ const RegisterUser = async (firstName, lastName, email, password) => {
                 <TouchableOpacity
                 onPress={() => {RegisterUser(firstName, lastName, email, password), navigation.navigate('Login')}}
                 style={styles.button} >
-                    <Text style={{fontWeight: 'bold', fontSize: 22}}>Signup</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16}}>Signup</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                 onPress={() => navigation.navigate('Login')}
@@ -101,11 +102,11 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 25,
         height: 40,
-        width: 200,
+        width: 160,
         backgroundColor: '#e36888',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50,
+        borderRadius: 15,
     },
 })

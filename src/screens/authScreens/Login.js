@@ -4,13 +4,13 @@ import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import {colors} from '../../global/Styles';
 
-
 import GoogleButton from 'react-google-button'
 import { signInWithPopup } from "firebase/auth";
 import { authentication, provider } from "../../components/firebase-Config";
 import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Login = () => {
+    
     const navigation = useNavigation()
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [email, setEmail] = useState('')
@@ -98,7 +98,7 @@ const SignInUser = () => {
             <TouchableOpacity
                 onPress={() => {SignInUser(email, password), navigation.navigate('Home')}}
                 style={styles.button}>
-                <Text style={{fontWeight: 'bold', fontSize: 22}}>Sign in</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Sign in</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('ForgotPassword')}
@@ -108,7 +108,7 @@ const SignInUser = () => {
                 </Text>
             </TouchableOpacity>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>OR</Text>
-            <GoogleButton type="light" onClick={googleSignUp} style={styles.googleButton} />
+            <GoogleButton type="dark" onClick={googleSignUp} style={styles.googleButton} />
             <TouchableOpacity style={styles.facebookButton} >
             <FacebookIcon color="#fff" />
             <Text style={{fontWeight: 'bold', fontSize: 16, marginLeft: 10}}>Sign in with Facebook</Text>
@@ -149,16 +149,16 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 25,
         height: 40,
-        width: 200,
+        width: 160,
         backgroundColor: '#e36888',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50,
+        borderRadius: 15,
     },
     googleButton: {
         marginTop: 20,
-        color: '#e36888',
+        color: '#000',
     },
     facebookButton: {
         flexDirection: 'row',
@@ -169,6 +169,6 @@ const styles = StyleSheet.create({
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50,
+        borderRadius: 15,
     },
 })

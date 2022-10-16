@@ -38,7 +38,7 @@ export default function OnBoardWelcome() {
 
             <View style={styles.textContainer}>
             <View>
-                
+                <Text style={styles.txtWords}>Welcome To Royale Food Restaurants</Text>
                 <Text style={styles.txtWords}>Healthy and Delicious Food</Text>
                 <Text style={styles.slogan}>We help you find best Healty and delicious food!!!</Text>
             </View>
@@ -51,7 +51,7 @@ export default function OnBoardWelcome() {
             <TouchableOpacity
                 onPress={() => navigation.navigate('Login')}
                 style={styles.button}>
-                <Text style={{fontWeight: 'bold', fontSize: 22}}>Get Started</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Get Started</Text>
             </TouchableOpacity>
             </View>
             </View>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create ({
         flex: 1,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor: '#9DD6EB',    
+        backgroundColor: '#9DD6EB', 
     },
     slide2: {
         flex: 1,
@@ -95,15 +95,15 @@ const styles = StyleSheet.create ({
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 20,
+        color: colors.grey1,
     },
     slogan: {
         marginTop: 16,
         fontSize: 16, 
         fontWeight: 'bold',
         textAlign: 'center',
-        color: colors.grey1,
-        marginBottom: 20,
+        color: colors.grey3,
+        marginBottom: 30,
     },
     indicatorContainer: {
         height: 50,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create ({
         justifyContent: 'center',
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 30,
+        marginBottom: 50,
     },
     currentIndicator: {
         height: 12,
@@ -131,11 +131,11 @@ const styles = StyleSheet.create ({
         marginTop: 50,
         marginBottom: 30,
         height: 40,
-        width: 200,
+        width: 160,
         backgroundColor: '#e36888',
         color: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50,
+        borderRadius: 15,
     }, 
 });
