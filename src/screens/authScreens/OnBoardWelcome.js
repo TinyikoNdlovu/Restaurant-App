@@ -3,23 +3,44 @@ import { Text, StyleSheet, View, SafeAreaView, Image, TouchableOpacity } from "r
 import { useNavigation } from "@react-navigation/native";
 import {colors} from '../../global/Styles';
 
-const OnBoardWelcome = () => {
+import Swiper from 'react-native-swiper'
+
+export default function OnBoardWelcome() {
 
     const navigation = useNavigation()
 
     return(
-        <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-            <View>
-            <Text style={styles.discover}>Welcome, Discover restaurant's in your area@</Text>
+        <SafeAreaView style={{backgroundColor: 'white'}}>
+            <View style={{flex:3, paddingTop: 20, alignItems:'center',justifyContent: 'flex-start'}}>
+            <Text style={styles.discover}>Discover restaurant's</Text>
+            <Text style={styles.discover}>in your area@</Text>
             </View>
-            <View style={{height: 400}}>
-                <Image style={{width: '100%', resizeMode: 'contain', top: -200}} source={require("../../../assets/onboardImage.png")} />
+
+            <View style={{flex: 6,justifyContent: 'center'}}>
+            <Swiper autoplay ={true}>
+                <View style={styles.slide1}>
+                <Image source={require("../../../assets/slide1.jpg")} style={{height: '100%',width: '100%', resizeMode: 'stretch'}} />
+                </View>
+                <View style={styles.slide2}>
+                <Image source={require("../../../assets/slide2.jpg")} style={{height: '100%',width: '100%', resizeMode: 'stretch'}} />
+                </View>
+                <View style={styles.slide3}>
+                <Image source={require("../../../assets/slide3.jpg")} style={{height: '100%',width: '100%', resizeMode: 'stretch'}} />
+                </View>
+                <View style={styles.slide3}>
+                <Image source={require("../../../assets/slide4.jpg")} style={{height: '100%',width: '100%', resizeMode: 'stretch'}} />
+                </View>
+                
+            </Swiper>
             </View>
+
+            <View style={{flex: 4}}></View>
+
             <View style={styles.textContainer}>
             <View>
                 
                 <Text style={styles.txtWords}>Healthy and Delicious Food</Text>
-                <Text style={styles.slogan}>We help you find best Healty and delicious food</Text>
+                <Text style={styles.slogan}>We help you find best Healty and delicious food!!!</Text>
             </View>
             <View style={styles.indicatorContainer}>
                 <View style={styles.currentIndicator}></View>
@@ -39,9 +60,25 @@ const OnBoardWelcome = () => {
     )
 }
 
-export default OnBoardWelcome
-
 const styles = StyleSheet.create ({
+    slide1: {
+        flex: 1,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor: '#9DD6EB',    
+    },
+    slide2: {
+        flex: 1,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor: '#97CAE5',       
+    },
+    slide3: {
+        flex: 1,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor: '#92BBD9',            
+    },
     textContainer: {
         flex: 1,
         paddingHorizontal: 50,
@@ -49,21 +86,24 @@ const styles = StyleSheet.create ({
         paddingBottom: 40,
     },
     discover: {
-        fontSize: 16,
+        fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: colors.grey3,
+        color: colors.buttons,
     },
     txtWords: {
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginBottom: 20,
     },
     slogan: {
         marginTop: 16,
         fontSize: 16, 
+        fontWeight: 'bold',
         textAlign: 'center',
-        color: colors.grey3,
+        color: colors.grey1,
+        marginBottom: 20,
     },
     indicatorContainer: {
         height: 50,
@@ -71,6 +111,7 @@ const styles = StyleSheet.create ({
         justifyContent: 'center',
         flexDirection: 'row',
         alignItems: 'center',
+        marginBottom: 30,
     },
     currentIndicator: {
         height: 12,
@@ -88,6 +129,7 @@ const styles = StyleSheet.create ({
     }, 
     button: {
         marginTop: 50,
+        marginBottom: 30,
         height: 40,
         width: 200,
         backgroundColor: '#e36888',
