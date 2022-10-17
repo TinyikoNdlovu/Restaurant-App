@@ -8,7 +8,6 @@ import OnBoardWelcome from "../screens/authScreens/OnBoardWelcome";
 import Login from "../screens/authScreens/Login";
 import Signup from "../screens/authScreens/Signup";
 import Home from "../screens/Home";
-import Food from "../screens/Food";
 import Drinks from "../screens/Drinks";
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -20,7 +19,7 @@ const Authstack = createStackNavigator();
 export default function AuthNavigate() {
 
     return(
-            <Authstack.Navigator initialRouteName='OnboardWelcome'>
+            <Authstack.Navigator initialRouteName='Home'>
                 <Authstack.Screen name="OnboardWelcome" 
                  component={OnBoardWelcome}
                  options={{headerShown: false,
@@ -51,10 +50,6 @@ export default function AuthNavigate() {
                  headerRight: () => (
                  <ShoppingCartIcon style={{color: '#fff'}} />  
                   ), }}/>
-                <Authstack.Screen name="Food"
-                 component={Food}
-                 options={{headerShown: false,
-                    ...TransitionPresets.RevealFromBottomAndroid }} />
                 <Authstack.Screen name="Drinks"
                  component={Drinks}
                  options={{headerShown: false,
