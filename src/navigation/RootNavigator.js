@@ -9,6 +9,6 @@ export default function RootNavigator() {
         <NavigationContainer>
             <AuthNavigate />
         </NavigationContainer>
-    )
+    );
 }
 

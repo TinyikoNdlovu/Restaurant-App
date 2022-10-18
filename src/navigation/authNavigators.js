@@ -7,6 +7,7 @@ import {colors} from '../../src/global/Styles'
 import OnBoardWelcome from "../screens/authScreens/OnBoardWelcome";
 import Login from "../screens/authScreens/Login";
 import Signup from "../screens/authScreens/Signup";
+import RootClientTabs from "./ClientTabs";
 import Home from "../screens/Home";
 import Drinks from "../screens/Drinks";
 
@@ -19,7 +20,7 @@ const Authstack = createStackNavigator();
 export default function AuthNavigate() {
 
     return(
-            <Authstack.Navigator initialRouteName='Home'>
+            <Authstack.Navigator initialRouteName='OnboardWelcome'>
                 <Authstack.Screen name="OnboardWelcome" 
                  component={OnBoardWelcome}
                  options={{headerShown: false,
@@ -38,8 +39,8 @@ export default function AuthNavigate() {
                  headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
                  headerStyle: {backgroundColor: colors.buttons, height: 50},
                  ...TransitionPresets.RevealFromBottomAndroid }} />
-                <Authstack.Screen name="Home"
-                 component={Home}
+                <Authstack.Screen name="RootClientTabs"
+                 component={RootClientTabs}
                  options={{title:'RoyaleFood',
                  headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
                  headerStyle: {backgroundColor: colors.buttons, height: 50},

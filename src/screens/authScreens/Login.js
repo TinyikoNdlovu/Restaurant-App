@@ -7,7 +7,6 @@ import {colors} from '../../global/Styles';
 import GoogleButton from 'react-google-button'
 import { signInWithPopup } from "firebase/auth";
 import { authentication, provider } from "../../components/firebase-Config";
-import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Login = () => {
     
@@ -96,7 +95,7 @@ const SignInUser = () => {
                 secureTextEntry={true} />
             </View>
             <TouchableOpacity
-                onPress={() => {SignInUser(email, password), navigation.navigate('Home')}}
+                onPress={() => {SignInUser(email, password), navigation.navigate('RootClientTabs')}}
                 style={styles.button}>
                 <Text style={{fontWeight: 'bold', fontSize: 16}}>Sign in</Text>
             </TouchableOpacity>
@@ -109,10 +108,7 @@ const SignInUser = () => {
             </TouchableOpacity>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>OR</Text>
             <GoogleButton type="dark" onClick={googleSignUp} style={styles.googleButton} />
-            <TouchableOpacity style={styles.facebookButton} >
-            <FacebookIcon color="#fff" />
-            <Text style={{fontWeight: 'bold', fontSize: 16, marginLeft: 10}}>Sign in with Facebook</Text>
-            </TouchableOpacity>
+
             <TouchableOpacity
                 onPress={() => navigation.navigate('Signup')}
                 style={{marginTop: 20}}>
@@ -159,16 +155,5 @@ const styles = StyleSheet.create({
     googleButton: {
         marginTop: 20,
         color: '#000',
-    },
-    facebookButton: {
-        flexDirection: 'row',
-        marginTop: 25,
-        height: 40,
-        width: 250,
-        backgroundColor: '#e36888',
-        color: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 15,
     },
 })

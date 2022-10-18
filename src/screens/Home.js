@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, FlatList, Pressable, Image, Dimensions, Button, } from "react-native";
 import React, { useState, useEffect } from 'react';
 import { useNavigation } from "@react-navigation/native";
+import {createBottomTabNavigator} from 'react-navigation/bottom-tabs';
 import { authentication } from "../components/firebase-Config";
 
 import Countdown from 'react-native-countdown-component';
