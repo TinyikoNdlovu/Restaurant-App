@@ -13,10 +13,11 @@ import ScheduleIcon from '@mui/icons-material/Schedule';
 import TuneIcon from '@mui/icons-material/Tune';
 import PlaceIcon from '@mui/icons-material/Place';
 import FoodCard from '../components/FoodCard';
+import HomeHeader from '../components/HomeHeader';
 
 const SCREEN_WIDTH = Dimensions.get('window').width
 
-export default function Home({ signOut }) {
+export default function Home() {
 
   const [delivery, setDelivery] = useState(true)
   const [indexCheck, setIndexCheck] = useState('0')
@@ -27,6 +28,7 @@ export default function Home({ signOut }) {
   return (
 
     <View style={styles.container}>
+      <HomeHeader navigation={navigation} />
 
       <ScrollView 
         stickyHeaderIndices={[0]}

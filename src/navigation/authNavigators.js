@@ -9,17 +9,17 @@ import Login from "../screens/authScreens/Login";
 import Signup from "../screens/authScreens/Signup";
 import RestaurantsMap from "../screens/RestaurantsMap";
 import DrawerNavigator from "./DrawerNavigator";
+import { useNavigation } from "@react-navigation/native";
 import ClientTabs from "../navigation/ClientTabs";
 import Home from "../screens/Home";
 import Drinks from "../screens/Drinks";
-
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Icon } from '@mui/icons-material';
+import RootClientTabs from "../navigation/ClientTabs";
 
 const Authstack = createStackNavigator();
 
 export default function AuthNavigate() {
+
+    const navigation = useNavigation()
 
     return(
             <Authstack.Navigator initialRouteName='OnboardWelcome'>
@@ -43,16 +43,10 @@ export default function AuthNavigate() {
                  ...TransitionPresets.RevealFromBottomAndroid }} />
                 <Authstack.Screen name="DrawerNavigator"
                  component={DrawerNavigator}
-                 options={{title:'RoyaleFood',
+                 options={{title: 'DrawerNavigator',
                  headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
                  headerStyle: {backgroundColor: colors.buttons, height: 50},
-                 ...TransitionPresets.RevealFromBottomAndroid,
-                 headerLeft: () => (
-                    <MenuIcon style={{color: '#fff'}} />
-                    ),
-                 headerRight: () => (
-                 <ShoppingCartIcon style={{color: '#fff'}} />  
-                  ), }}/>
+                 ...TransitionPresets.RevealFromBottomAndroid }}/>
                   <Authstack.Screen name="RestaurantsMap"
                  component={RestaurantsMap}
                  options={{headerShown: false,
