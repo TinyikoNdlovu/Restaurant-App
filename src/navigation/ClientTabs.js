@@ -14,6 +14,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import ListIcon from '@mui/icons-material/List';
 import PersonIcon from '@mui/icons-material/Person';
+import Badge from '@mui/material/Badge';
 
 
 const ClientTabs = createBottomTabNavigator();
@@ -28,7 +29,8 @@ export default function RootClientTabs() {
             component ={Home}
             options = {
                 {
-                    tabBarLabel: "Home",
+                    headerShown: false,
+                    // tabBarLabel: "Home",
                     tabBarIcon: ({color,size})=>(
                         <HomeIcon style={{color: colors.buttons}} size ={size} />
                                         )
@@ -39,7 +41,8 @@ export default function RootClientTabs() {
             component ={Search}
             options = {
                 {
-                    tabBarLabel: "Search",
+                    headerShown: false,
+                    // tabBarLabel: "Search",
                     tabBarIcon: ({color,size})=>(
                         <SearchIcon style={{color: 'gray'}} size ={size} />
                                         )
@@ -50,9 +53,12 @@ export default function RootClientTabs() {
             component ={MyOrders}
             options = {
                 {
-                    tabBarLabel: "view-list",
+                    headerShown: false,
+                    // tabBarLabel: "view-list",
                     tabBarIcon: ({color,size})=>(
-                        <ListIcon style={{color: 'gray'}} size ={size} />
+                        <Badge badgeContent={0} color="success">
+                            <ListIcon style={{color: 'gray'}} size ={size} />
+                            </Badge>
                                         )
                 }
             } />
@@ -61,7 +67,8 @@ export default function RootClientTabs() {
             component ={MyAccount}
             options = {
                 {
-                    tabBarLabel: "My Account",
+                    headerShown: false,
+                    // tabBarLabel: "My Account",
                     tabBarIcon: ({color,size})=>(
                         <PersonIcon style={{color: 'gray'}} size ={size} />
                                         )

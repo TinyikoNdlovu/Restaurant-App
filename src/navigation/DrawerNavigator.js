@@ -18,7 +18,7 @@ export default function DrawerNavigator(){
     return(
         <Drawer.Navigator>
             <Drawer.Screen name="RootClientTabs" component={RootClientTabs}
-            options={{title:'Client',
+            options={{title: 'Client',
             drawerIcon: ({focused,size}) =>(
                 <HomeIcon color= {focused ? '#7cc' :colors.grey2}
                 size={size} />

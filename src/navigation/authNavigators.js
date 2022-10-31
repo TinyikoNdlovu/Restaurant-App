@@ -12,7 +12,6 @@ import DrawerNavigator from "./DrawerNavigator";
 import { useNavigation } from "@react-navigation/native";
 import ClientTabs from "../navigation/ClientTabs";
 import Home from "../screens/Home";
-import Drinks from "../screens/Drinks";
 import RootClientTabs from "../navigation/ClientTabs";
 
 const Authstack = createStackNavigator();
@@ -26,33 +25,21 @@ export default function AuthNavigate() {
                 <Authstack.Screen name="OnboardWelcome" 
                  component={OnBoardWelcome}
                  options={{headerShown: false,
-                 headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
-                 headerStyle: {backgroundColor: colors.buttons, height: 50},
                  ...TransitionPresets.RevealFromBottomAndroid }} />
                 <Authstack.Screen  name="Login"
                  component={Login}
-                 options={{title:'My Account',
-                 headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
-                 headerStyle: {backgroundColor: colors.buttons, height: 50,},
+                 options={{headerShown: false,
                  ...TransitionPresets.RevealFromBottomAndroid }} />
                 <Authstack.Screen name="Signup"
                  component={Signup}
-                 options={{title:'Signup',
-                 headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
-                 headerStyle: {backgroundColor: colors.buttons, height: 50},
+                 options={{headerShown: false,
                  ...TransitionPresets.RevealFromBottomAndroid }} />
                 <Authstack.Screen name="DrawerNavigator"
                  component={DrawerNavigator}
-                 options={{title: 'DrawerNavigator',
-                 headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
-                 headerStyle: {backgroundColor: colors.buttons, height: 50},
+                 options={{headerShown: false,
                  ...TransitionPresets.RevealFromBottomAndroid }}/>
                   <Authstack.Screen name="RestaurantsMap"
                  component={RestaurantsMap}
-                 options={{headerShown: false,
-                    ...TransitionPresets.RevealFromBottomAndroid }} />
-                <Authstack.Screen name="Drinks"
-                 component={Drinks}
                  options={{headerShown: false,
                     ...TransitionPresets.RevealFromBottomAndroid }} />
             </Authstack.Navigator>
