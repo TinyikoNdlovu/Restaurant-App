@@ -28,7 +28,7 @@ export default function FoodCard({OnPressFoodCard,
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={styles.distance}>
-                    <LocationOnIcon style={{color: '#111'}} />
+                    <LocationOnIcon style={{color: colors.grey2}} />
                     <Text style={styles.Minute}>{farAway} Min</Text>  
                     </View>
 

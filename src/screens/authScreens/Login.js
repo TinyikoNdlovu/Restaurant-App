@@ -46,7 +46,7 @@ const SignInUser = () => {
         //email = user.email
         //photo = user.photoURL
         alert(user.email);
-        navigation.navigate('Home')
+        navigation.navigate('DrawerNavigator')
     
       }).catch((error) => {
         // Handle Errors here.
@@ -95,7 +95,7 @@ const SignInUser = () => {
                 secureTextEntry={true} />
             </View>
             <TouchableOpacity
-                onPress={() => {SignInUser(email, password), navigation.navigate('RootClientTabs')}}
+                onPress={() => {SignInUser(email, password), navigation.navigate('DrawerNavigator')}}
                 style={styles.button}>
                 <Text style={{fontWeight: 'bold', fontSize: 16}}>Sign in</Text>
             </TouchableOpacity>

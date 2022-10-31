@@ -7,6 +7,7 @@ import Home from '../screens/Home';
 import Search from '../screens/Search';
 import MyOrders from '../screens/MyOrders';
 import MyAccount from '../screens/MyAccount';
+//import RestaurantsMap from '../screens/RestaurantsMap';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeIcon from '@mui/icons-material/Home';
@@ -14,10 +15,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import ListIcon from '@mui/icons-material/List';
 import PersonIcon from '@mui/icons-material/Person';
 
-const navigation = useNavigation()
+
 const ClientTabs = createBottomTabNavigator();
 
 export default function RootClientTabs() {
+
+    const navigation = useNavigation()
 
     return(
         <ClientTabs.Navigator tabBarOptions = {{activeTintColor: colors.buttons}}>
@@ -27,7 +30,7 @@ export default function RootClientTabs() {
                 {
                     tabBarLabel: "Home",
                     tabBarIcon: ({color,size})=>(
-                        <HomeIcon color = {color} size ={size} />
+                        <HomeIcon style={{color: colors.buttons}} size ={size} />
                                         )
                 }
             } />
@@ -38,7 +41,7 @@ export default function RootClientTabs() {
                 {
                     tabBarLabel: "Search",
                     tabBarIcon: ({color,size})=>(
-                        <SearchIcon color = {color} size ={size} />
+                        <SearchIcon style={{color: 'gray'}} size ={size} />
                                         )
                 }
             } />
@@ -49,7 +52,7 @@ export default function RootClientTabs() {
                 {
                     tabBarLabel: "view-list",
                     tabBarIcon: ({color,size})=>(
-                        <ListIcon color = {color} size ={size} />
+                        <ListIcon style={{color: 'gray'}} size ={size} />
                                         )
                 }
             } />
@@ -60,7 +63,7 @@ export default function RootClientTabs() {
                 {
                     tabBarLabel: "My Account",
                     tabBarIcon: ({color,size})=>(
-                        <PersonIcon color = {color} size ={size} />
+                        <PersonIcon style={{color: 'gray'}} size ={size} />
                                         )
                 }
             } />

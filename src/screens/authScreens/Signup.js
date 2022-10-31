@@ -14,7 +14,8 @@ const Signup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-const RegisterUser = async (firstName, lastName, email, password) => {
+const RegisterUser = async () => {
+
         await createUserWithEmailAndPassword(authentication, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -75,7 +76,7 @@ const RegisterUser = async (firstName, lastName, email, password) => {
         </View>
         </SafeAreaView>
         
-    )
+    );
 }
 
 export default Signup
@@ -109,4 +110,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 15,
     },
-})
+});

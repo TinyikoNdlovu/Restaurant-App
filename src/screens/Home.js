@@ -2,7 +2,6 @@ import 'react-native-gesture-handler';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, FlatList, Pressable, Image, Dimensions, Button, } from "react-native";
 import React, { useState, useEffect } from 'react';
 import { useNavigation } from "@react-navigation/native";
-import {createBottomTabNavigator} from 'react-navigation/bottom-tabs';
 import { authentication } from "../components/firebase-Config";
 
 import Countdown from 'react-native-countdown-component';
@@ -12,6 +11,7 @@ import { filterData, restaurantsData } from '../global/Data';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import TuneIcon from '@mui/icons-material/Tune';
+import PlaceIcon from '@mui/icons-material/Place';
 import FoodCard from '../components/FoodCard';
 
 const SCREEN_WIDTH = Dimensions.get('window').width
@@ -45,7 +45,7 @@ export default function Home({ signOut }) {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => setDelivery(true)}
+              onPress={() => (setDelivery(true), navigation.navigate('RestaurantsMap'))}
               style={styles.buttonPickup}>
               <View style={{ ...styles.buttonPickup, backgroundColor: delivery ? colors.grey5 : colors.buttons }}>
                 <Text style={{ fontWeight: 'bold', fontSize: 16 }}>Pick Up</Text>
@@ -57,19 +57,19 @@ export default function Home({ signOut }) {
         <View style={styles.filterView}>
           <View style={styles.addressView}>
             <View style={{ flexDirection: 'row', alignItems: 'center', paddingLeft: 10 }}>
-              <LocationOnIcon style={{ color: '#111' }} />
+              <LocationOnIcon style={{ color: colors.grey2 }} />
               <Text style={{ marginLeft: 5 }}>4772 Basambilo Circle</Text>
             </View>
 
             <View style={styles.clockView}>
-              <ScheduleIcon style={{ color: '#111' }} />
+              <ScheduleIcon style={{ color: colors.grey2 }} />
               <Text style={{ marginLeft: 5 }}>Now</Text>
             </View>
 
           </View>
 
           <View>
-            <TuneIcon style={{ color: '#111' }} />
+            <TuneIcon style={{ color: colors.grey2 }} />
           </View>
         </View>
 
@@ -161,7 +161,7 @@ export default function Home({ signOut }) {
         </View>
 
         <View style={{ width: SCREEN_WIDTH, paddingTop: 10 }}>
-          {
+          { 
             restaurantsData.map(item => (
               <View key={item.id} style={{ paddingBottom: 20 }}>
                 <FoodCard screenWidth={SCREEN_WIDTH * 0.95}
@@ -178,6 +178,15 @@ export default function Home({ signOut }) {
         </View>
 
       </ScrollView>
+
+      { delivery &&
+      <View style={styles.floatButton}>
+        <TouchableOpacity onPress={() => {navigation.navigate('RestaurantsMap')}} >
+          <PlaceIcon style={{size: '32', color: colors.buttons}} />
+          <Text style={{color: colors.grey2}}>Map</Text>
+        </TouchableOpacity>
+      </View>
+      }
 
     </View>
 
@@ -268,5 +277,16 @@ const styles = StyleSheet.create({
   smallCardText: {
     fontWeight: 'bold',
     color: colors.grey2,
+  },
+  floatButton: {
+    position: 'absolute',
+    bottom: 10,
+    right: 15,
+    backgroundColor: 'white',
+    elevation: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: 'center',
   },
 });

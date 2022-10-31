@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native';
 
 export default function MyAccount(){
 
@@ -10,3 +10,4 @@ export default function MyAccount(){
         </View>
     );
 }
+

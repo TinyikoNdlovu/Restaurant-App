@@ -40,7 +40,7 @@ export default function OnBoardWelcome() {
             <View>
                 <Text style={styles.txtWords}>Welcome To Royale Food Restaurants</Text>
                 <Text style={styles.txtWords}>Healthy and Delicious Food</Text>
-                <Text style={styles.slogan}>We help you find best Healty and delicious food!!!</Text>
+                <Text style={styles.slogan}>We help you find best Healthy and delicious food!!!</Text>
             </View>
             <View style={styles.indicatorContainer}>
                 <View style={styles.currentIndicator}></View>

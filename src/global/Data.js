@@ -1,4 +1,3 @@
-import { Park } from '@mui/icons-material';
 
 export const filterData = [
     {name:"Fast food",image: require('../../assets/fastfood.jpg'), id:'0'},

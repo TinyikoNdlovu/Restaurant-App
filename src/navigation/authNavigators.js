@@ -7,7 +7,9 @@ import {colors} from '../../src/global/Styles'
 import OnBoardWelcome from "../screens/authScreens/OnBoardWelcome";
 import Login from "../screens/authScreens/Login";
 import Signup from "../screens/authScreens/Signup";
-import RootClientTabs from "./ClientTabs";
+import RestaurantsMap from "../screens/RestaurantsMap";
+import DrawerNavigator from "./DrawerNavigator";
+import ClientTabs from "../navigation/ClientTabs";
 import Home from "../screens/Home";
 import Drinks from "../screens/Drinks";
 
@@ -39,8 +41,8 @@ export default function AuthNavigate() {
                  headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
                  headerStyle: {backgroundColor: colors.buttons, height: 50},
                  ...TransitionPresets.RevealFromBottomAndroid }} />
-                <Authstack.Screen name="RootClientTabs"
-                 component={RootClientTabs}
+                <Authstack.Screen name="DrawerNavigator"
+                 component={DrawerNavigator}
                  options={{title:'RoyaleFood',
                  headerTitleStyle: {color: '#fff', fontWeight: 'bold',},
                  headerStyle: {backgroundColor: colors.buttons, height: 50},
@@ -51,6 +53,10 @@ export default function AuthNavigate() {
                  headerRight: () => (
                  <ShoppingCartIcon style={{color: '#fff'}} />  
                   ), }}/>
+                  <Authstack.Screen name="RestaurantsMap"
+                 component={RestaurantsMap}
+                 options={{headerShown: false,
+                    ...TransitionPresets.RevealFromBottomAndroid }} />
                 <Authstack.Screen name="Drinks"
                  component={Drinks}
                  options={{headerShown: false,
