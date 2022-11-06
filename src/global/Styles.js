@@ -1,3 +1,4 @@
+import { BottomTabBarHeightCallbackContext } from "@react-navigation/bottom-tabs"
 
 export const colors = {
     buttons: "#e36888",

@@ -10,24 +10,25 @@ import BusinessIcon from '@mui/icons-material/Business';
 import { colors } from '../global/Styles'
 import BusinessConsole from '../screens/BusinessConsole';
 import Home from '../screens/Home';
+import DrawerContent from '../components/DrawerContent';
 
 const Drawer = createDrawerNavigator()
 
 export default function DrawerNavigator(){
 
     return(
-        <Drawer.Navigator>
+        <Drawer.Navigator drawerContent ={props =><DrawerContent {...props} />} >
             <Drawer.Screen name="RootClientTabs" component={RootClientTabs}
-            options={{title: 'Client',
+            options={{headerShown: false, title: 'Client',
             drawerIcon: ({focused,size}) =>(
-                <HomeIcon color= {focused ? '#7cc' :colors.grey2}
+                <HomeIcon color= {focused ? '#7cc' :colors.grey2} style={{color: colors.grey2}}
                 size={size} />
             )}} />
             
             <Drawer.Screen name="BusinessConsole" component={BusinessConsole}
             options={{title:'Business console',
             drawerIcon: ({focused,size}) =>(
-                <BusinessIcon color= {focused ? '#7cc' :colors.grey2}
+                <BusinessIcon color= {focused ? '#7cc' :colors.grey2} style={{color: colors.grey2}}
                 size={size} />
             )}} />
         </Drawer.Navigator>

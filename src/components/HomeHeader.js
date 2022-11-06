@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { colors, parameters } from '../global/Styles';
 
@@ -14,9 +14,9 @@ export default function HomeHeader() {
     return(
         <View style={styles.header}>
             <View style={{alignItems: "center", justifyContent: "center", marginLeft: 15}} >
-                <Button onPress={() => {navigation.toggleDrawer()}}>
+                <TouchableOpacity onPress={() => {navigation.toggleDrawer()}}>
                 <MenuIcon style={{color: colors.cardbackground}} size={32} />
-                </Button>
+                </TouchableOpacity>
                 
             </View>
 
